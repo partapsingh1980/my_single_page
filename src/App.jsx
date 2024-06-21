@@ -9,7 +9,7 @@ const App = () => {
   const [newNote, setNewNote] = useState('')
   const [showAll, setShowAll] = useState(false)
   const [errorMessage, setErrorMessage] = useState(null)
-
+  const [gnotes, setGnotes] = useState(0)
   useEffect(() => {
     noteService
       .getAll()
@@ -87,6 +87,9 @@ const App = () => {
         />
         <button type="submit">save</button>
       </form> 
+      <button onClick={()=>setGnotes(gnotes+1)}>plus</button>
+      <input value={gnotes}/>
+      
     </div>
   )
 }
